@@ -33,14 +33,14 @@
         "OneShot": false
     },
     {
-        "UpdateStageName": "Create local.conf",
-        "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "CopyFilePath",
-        "UpdateSourceData": "openrsc/server/default.conf",
-        "UpdateSourceArgs": "openrsc/server/local.conf",
-        "UnzipUpdateSource": false,
-        "OverwriteExistingFiles": false,
-        "DeleteAfterExtract": false,
-        "OneShot": true
-    }
+		"UpdateStageName": "Create local.conf",
+		"UpdateSourcePlatform": "Linux",
+		"UpdateSource": "Executable",
+		"UpdateSourceData": "/bin/cp",
+		"UpdateSourceArgs": "openrsc/server/default.conf openrsc/server/local.conf",
+		"UnzipUpdateSource": false,
+		"OverwriteExistingFiles": false,
+		"DeleteAfterExtract": false,
+		"OneShot": true
+	}
 ]
