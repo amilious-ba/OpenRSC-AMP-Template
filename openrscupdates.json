@@ -1,15 +1,37 @@
 [
     {
-		"UpdateStageName": "Initial Clone",
-		"UpdateSourcePlatform": "Linux",
-		"UpdateSource": "Executable",
-		"UpdateSourceData": "/bin/bash",
-		"UpdateSourceArgs": "-c \"rm -rf openrsc && git clone https://github.com/Open-RSC/Core-Framework.git openrsc\"",
-		"UnzipUpdateSource": false,
-		"OverwriteExistingFiles": false,
-		"DeleteAfterExtract": false,
-		"OneShot": true
-	},
+        "UpdateStageName": "Initial Clone",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"rm -rf openrsc && git clone https://github.com/Open-RSC/Core-Framework.git openrsc\"",
+        "UnzipUpdateSource": false,
+        "OverwriteExistingFiles": false,
+        "DeleteAfterExtract": false,
+        "OneShot": true
+    },
+    {
+        "UpdateStageName": "Copy update-connections.sh",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/cp",
+        "UpdateSourceArgs": "update-connections.sh openrsc/update-connections.sh",
+        "UnzipUpdateSource": false,
+        "OverwriteExistingFiles": true,
+        "DeleteAfterExtract": false,
+        "OneShot": false
+    },
+    {
+        "UpdateStageName": "Make script executable",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/chmod",
+        "UpdateSourceArgs": "+x openrsc/update-connections.sh",
+        "UnzipUpdateSource": false,
+        "OverwriteExistingFiles": false,
+        "DeleteAfterExtract": false,
+        "OneShot": false
+    },
     {
         "UpdateStageName": "Git Pull",
         "UpdateSourcePlatform": "Linux",
@@ -33,14 +55,14 @@
         "OneShot": false
     },
     {
-		"UpdateStageName": "Create local.conf",
-		"UpdateSourcePlatform": "Linux",
-		"UpdateSource": "Executable",
-		"UpdateSourceData": "/bin/cp",
-		"UpdateSourceArgs": "openrsc/server/default.conf openrsc/server/local.conf",
-		"UnzipUpdateSource": false,
-		"OverwriteExistingFiles": false,
-		"DeleteAfterExtract": false,
-		"OneShot": true
-	}
+        "UpdateStageName": "Create local.conf",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/cp",
+        "UpdateSourceArgs": "openrsc/server/default.conf openrsc/server/local.conf",
+        "UnzipUpdateSource": false,
+        "OverwriteExistingFiles": false,
+        "DeleteAfterExtract": false,
+        "OneShot": true
+    }
 ]

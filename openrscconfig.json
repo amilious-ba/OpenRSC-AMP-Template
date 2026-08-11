@@ -15,5 +15,164 @@
         "Hidden": false,
         "SkipIfEmpty": false,
         "EnumValues": {}
+    },
+    {
+        "DisplayName": "Database Type",
+        "Category": "Database",
+        "Description": "sqlite or mysql",
+        "Keywords": "database,db,type",
+        "FieldName": "db_type",
+        "InputType": "select",
+        "IsFlagArgument": false,
+        "ParamFieldName": "db_type",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "sqlite",
+        "EnumValues": {
+            "sqlite": "SQLite",
+            "mysql": "MySQL / MariaDB"
+        }
+    },
+    {
+        "DisplayName": "MySQL Host",
+        "Category": "Database",
+        "Description": "Host and port (e.g. localhost:3306)",
+        "Keywords": "mysql,host",
+        "FieldName": "db_host",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "db_host",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "localhost:3306"
+    },
+    {
+        "DisplayName": "MySQL User",
+        "Category": "Database",
+        "FieldName": "db_user",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "db_user",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "openrsc"
+    },
+    {
+        "DisplayName": "MySQL Password",
+        "Category": "Database",
+        "FieldName": "db_pass",
+        "InputType": "password",
+        "IsFlagArgument": false,
+        "ParamFieldName": "db_pass",
+        "IncludeInCommandLine": false,
+        "DefaultValue": ""
+    },
+    {
+        "DisplayName": "Table Prefix",
+        "Category": "Database",
+        "Description": "Leave blank unless needed",
+        "FieldName": "db_table_prefix",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "db_table_prefix",
+        "IncludeInCommandLine": false,
+        "DefaultValue": ""
+    },
+    {
+        "DisplayName": "SSL Server Cert Path",
+        "Category": "SSL",
+        "FieldName": "ssl_server_cert_path",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "ssl_server_cert_path",
+        "IncludeInCommandLine": false,
+        "DefaultValue": ""
+    },
+    {
+        "DisplayName": "SSL Server Key Path",
+        "Category": "SSL",
+        "FieldName": "ssl_server_key_path",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "ssl_server_key_path",
+        "IncludeInCommandLine": false,
+        "DefaultValue": ""
+    },
+    {
+        "DisplayName": "Discord Auction Webhook",
+        "Category": "Discord",
+        "FieldName": "discord_auction_webhook_url",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "discord_auction_webhook_url",
+        "IncludeInCommandLine": false,
+        "DefaultValue": ""
+    },
+    {
+        "DisplayName": "Discord Monitoring Webhook",
+        "Category": "Discord",
+        "FieldName": "discord_monitoring_webhook_url",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "discord_monitoring_webhook_url",
+        "IncludeInCommandLine": false,
+        "DefaultValue": ""
+    },
+    {
+        "DisplayName": "Discord Report Abuse Webhook",
+        "Category": "Discord",
+        "FieldName": "discord_report_abuse_webhook_url",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "discord_report_abuse_webhook_url",
+        "IncludeInCommandLine": false,
+        "DefaultValue": ""
+    },
+    {
+        "DisplayName": "Discord Staff Commands Webhook",
+        "Category": "Discord",
+        "FieldName": "discord_staff_commands_webhook_url",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "discord_staff_commands_webhook_url",
+        "IncludeInCommandLine": false,
+        "DefaultValue": ""
+    },
+    {
+        "DisplayName": "Discord Naughty Words Webhook",
+        "Category": "Discord",
+        "FieldName": "discord_naughty_words_webhook_url",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "discord_naughty_words_webhook_url",
+        "IncludeInCommandLine": false,
+        "DefaultValue": ""
+    },
+    {
+        "DisplayName": "Discord General Webhook",
+        "Category": "Discord",
+        "FieldName": "discord_general_webhook_url",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "discord_general_webhook_url",
+        "IncludeInCommandLine": false,
+        "DefaultValue": ""
+    },
+    {
+        "DisplayName": "Monitor IP",
+        "Category": "Monitor",
+        "FieldName": "monitor_ip",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "monitor_ip",
+        "IncludeInCommandLine": false,
+        "DefaultValue": "localhost"
+    },
+    {
+        "DisplayName": "Discord Downtime Report Webhook",
+        "Category": "Monitor",
+        "FieldName": "discord_downtime_report_webhook_url",
+        "InputType": "text",
+        "IsFlagArgument": false,
+        "ParamFieldName": "discord_downtime_report_webhook_url",
+        "IncludeInCommandLine": false,
+        "DefaultValue": ""
     }
 ]
