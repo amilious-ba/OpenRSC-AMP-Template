@@ -1,15 +1,15 @@
 [
     {
-        "UpdateStageName": "Initial Clone",
-        "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "Executable",
-        "UpdateSourceData": "/usr/bin/git",
-        "UpdateSourceArgs": "clone https://github.com/Open-RSC/Core-Framework.git openrsc",
-        "UnzipUpdateSource": false,
-        "OverwriteExistingFiles": false,
-        "DeleteAfterExtract": false,
-        "OneShot": true
-    },
+		"UpdateStageName": "Initial Clone",
+		"UpdateSourcePlatform": "Linux",
+		"UpdateSource": "Executable",
+		"UpdateSourceData": "/bin/bash",
+		"UpdateSourceArgs": "-c \"rm -rf openrsc && git clone https://github.com/Open-RSC/Core-Framework.git openrsc\"",
+		"UnzipUpdateSource": false,
+		"OverwriteExistingFiles": false,
+		"DeleteAfterExtract": false,
+		"OneShot": true
+	},
     {
         "UpdateStageName": "Git Pull",
         "UpdateSourcePlatform": "Linux",
