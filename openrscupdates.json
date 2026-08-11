@@ -4,10 +4,10 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/usr/bin/git",
-        "UpdateSourceArgs": "clone https://github.com/Open-RSC/Core-Framework.git .",
+        "UpdateSourceArgs": "clone https://github.com/Open-RSC/Core-Framework.git openrsc",
         "UnzipUpdateSource": false,
         "OverwriteExistingFiles": false,
-        "DeleteAfterExtract": true,
+        "DeleteAfterExtract": false,
         "OneShot": true
     },
     {
@@ -15,10 +15,10 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/usr/bin/git",
-        "UpdateSourceArgs": "pull",
+        "UpdateSourceArgs": "-C openrsc pull",
         "UnzipUpdateSource": false,
         "OverwriteExistingFiles": false,
-        "DeleteAfterExtract": true,
+        "DeleteAfterExtract": false,
         "OneShot": false
     },
     {
@@ -26,18 +26,18 @@
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "Executable",
         "UpdateSourceData": "/usr/bin/ant",
-        "UpdateSourceArgs": "compile",
+        "UpdateSourceArgs": "-f openrsc/server/build.xml compile",
         "UnzipUpdateSource": false,
         "OverwriteExistingFiles": false,
-        "DeleteAfterExtract": true,
+        "DeleteAfterExtract": false,
         "OneShot": false
     },
     {
         "UpdateStageName": "Create local.conf",
         "UpdateSourcePlatform": "Linux",
         "UpdateSource": "CopyFilePath",
-        "UpdateSourceData": "local.conf",
-        "UpdateSourceArgs": "default.conf",
+        "UpdateSourceData": "openrsc/server/default.conf",
+        "UpdateSourceArgs": "openrsc/server/local.conf",
         "UnzipUpdateSource": false,
         "OverwriteExistingFiles": false,
         "DeleteAfterExtract": false,
