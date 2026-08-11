@@ -1,11 +1,11 @@
 [
     {
-        "ConfigFile": "openrsc/server/local.conf",
+        "ConfigFile": "local.conf",
         "ConfigType": "kvp",
         "AutoMap": true
     },
     {
-        "ConfigFile": "openrsc/server/connections.conf",
+        "ConfigFile": "connections.conf",
         "ConfigType": "kvp",
         "AutoMap": true
     }
