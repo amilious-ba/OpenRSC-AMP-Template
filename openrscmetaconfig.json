@@ -2,11 +2,11 @@
     {
         "ConfigFile": "local.conf",
         "ConfigType": "kvp",
-        "AutoMap": true
+        "AutoMap": false
     },
     {
         "ConfigFile": "connections.conf",
         "ConfigType": "kvp",
-        "AutoMap": true
+        "AutoMap": false
     }
 ]
