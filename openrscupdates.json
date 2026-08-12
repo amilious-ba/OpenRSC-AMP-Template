@@ -11,16 +11,27 @@
         "OneShot": true
     },
     {
-        "UpdateStageName": "Create update-connections.sh",
-        "UpdateSourcePlatform": "Linux",
-        "UpdateSource": "Executable",
-        "UpdateSourceData": "/bin/bash",
-        "UpdateSourceArgs": "-c \"cat > update-connections.sh << 'SCRIPTEOF'\n#!/bin/bash\nset -e\nCONF=\\\"openrsc/server/connections.conf\\\"\nSERVER_DIR=\\\"openrsc/server\\\"\nDB_TYPE=\\\"${db_type:-sqlite}\\\"\nDB_HOST=\\\"${db_host:-localhost:3306}\\\"\nDB_USER=\\\"${db_user:-openrsc}\\\"\nDB_PASS=\\\"${db_pass:-}\\\"\nDB_PREFIX=\\\"${db_table_prefix:-}\\\"\nSSL_CERT=\\\"${ssl_server_cert_path:-}\\\"\nSSL_KEY=\\\"${ssl_server_key_path:-}\\\"\nDISCORD_AUCTION=\\\"${discord_auction_webhook_url:-null}\\\"\nDISCORD_MONITORING=\\\"${discord_monitoring_webhook_url:-null}\\\"\nDISCORD_REPORT=\\\"${discord_report_abuse_webhook_url:-null}\\\"\nDISCORD_STAFF=\\\"${discord_staff_commands_webhook_url:-null}\\\"\nDISCORD_NAUGHTY=\\\"${discord_naughty_words_webhook_url:-null}\\\"\nDISCORD_GENERAL=\\\"${discord_general_webhook_url:-null}\\\"\nMONITOR_IP=\\\"${monitor_ip:-localhost}\\\"\nDISCORD_DOWNTIME=\\\"${discord_downtime_report_webhook_url:-null}\\\"\n[[ -z \\\"\\$DISCORD_AUCTION\\\" ]] && DISCORD_AUCTION=\\\"null\\\"\n[[ -z \\\"\\$DISCORD_MONITORING\\\" ]] && DISCORD_MONITORING=\\\"null\\\"\n[[ -z \\\"\\$DISCORD_REPORT\\\" ]] && DISCORD_REPORT=\\\"null\\\"\n[[ -z \\\"\\$DISCORD_STAFF\\\" ]] && DISCORD_STAFF=\\\"null\\\"\n[[ -z \\\"\\$DISCORD_NAUGHTY\\\" ]] && DISCORD_NAUGHTY=\\\"null\\\"\n[[ -z \\\"\\$DISCORD_GENERAL\\\" ]] && DISCORD_GENERAL=\\\"null\\\"\n[[ -z \\\"\\$DISCORD_DOWNTIME\\\" ]] && DISCORD_DOWNTIME=\\\"null\\\"\ncat > \\\"\\$CONF\\\" << EOF\ndb_type: \\${DB_TYPE}\n\nmysql:\n        db_host: \\${DB_HOST}\n        db_user: \\${DB_USER}\n        db_pass: \\${DB_PASS}\n        db_table_prefix: \\${DB_PREFIX}\n\nssl:\n        ssl_server_cert_path: \\${SSL_CERT}\n        ssl_server_key_path: \\${SSL_KEY}\n\ndiscord:\n        discord_auction_webhook_url: \\${DISCORD_AUCTION}\n        discord_monitoring_webhook_url: \\${DISCORD_MONITORING}\n        discord_report_abuse_webhook_url: \\${DISCORD_REPORT}\n        discord_staff_commands_webhook_url: \\${DISCORD_STAFF}\n        discord_naughty_words_webhook_url: \\${DISCORD_NAUGHTY}\n        discord_general_webhook_url: \\${DISCORD_GENERAL}\n\nmonitor:\n        monitor_ip: \\${MONITOR_IP}\n        discord_downtime_report_webhook_url: \\${DISCORD_DOWNTIME}\nEOF\necho Updated \\$CONF\ncd \\\"\\$SERVER_DIR\\\"\nexec /usr/bin/ant runserver -DconfFile=local\nSCRIPTEOF\nchmod +x update-connections.sh\"",
-        "UnzipUpdateSource": false,
-        "OverwriteExistingFiles": true,
-        "DeleteAfterExtract": false,
-        "OneShot": false
-    },
+		"UpdateStageName": "Download update-connections.sh",
+		"UpdateSourcePlatform": "Linux",
+		"UpdateSource": "Executable",
+		"UpdateSourceData": "/usr/bin/curl",
+		"UpdateSourceArgs": "-fsSL -o update-connections.sh https://raw.githubusercontent.com/amilious-ba/OpenRSC-AMP-Template/main/update-connections.sh",
+		"UnzipUpdateSource": false,
+		"OverwriteExistingFiles": true,
+		"DeleteAfterExtract": false,
+		"OneShot": false
+	},
+	{
+		"UpdateStageName": "Make script executable",
+		"UpdateSourcePlatform": "Linux",
+		"UpdateSource": "Executable",
+		"UpdateSourceData": "/bin/chmod",
+		"UpdateSourceArgs": "+x update-connections.sh",
+		"UnzipUpdateSource": false,
+		"OverwriteExistingFiles": false,
+		"DeleteAfterExtract": false,
+		"OneShot": false
+	},
     {
         "UpdateStageName": "Git Pull",
         "UpdateSourcePlatform": "Linux",
